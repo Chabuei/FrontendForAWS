@@ -17,7 +17,7 @@ const Genre = () =>
                         genres.map((genre, index) => 
                         {
                             return (
-                                <li className = { styles.genreTag }>
+                                <li className = { styles.genreTag } key = { index }>
                                     <span className = { styles.genreTitle }>{ genre }</span>
                                 </li>
                             )

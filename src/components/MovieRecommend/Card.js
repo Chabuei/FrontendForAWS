@@ -5,6 +5,7 @@ import { Html } from '@react-three/drei'
 import { FaStar } from 'react-icons/fa'
 import styles from './Card.module.css'
 import StateHandler from '@/utils/Statehandler.js'
+import Image from 'next/image'
 
 const Title = lazy(() => {return import('../MovieRecommend/Title.js')})
 
@@ -19,10 +20,10 @@ const Rating = (props) =>
     )
 }
 
-const Image = (props) => 
+const Image2 = (props) => 
 {  
     return (
-        <img className = { styles.cardImage } src = { props.image } alt = 'movie_poster' />                                            
+        <Image className = { styles.cardImage } src = { props.image } alt = 'movie_poster' />                                            
     )
 }
 
@@ -93,7 +94,7 @@ const Card = () =>
                                     <div className = { styles.card } onClick = { () => { getCardInfo(currentMovies[index].title, currentMovies[index].movie_id) } }>
                                         <div className = { styles.cardHead }>
                                             <div className = { styles.cardContents2 }>                                            
-                                                <Image image = { currentMovies[index].image }/>                                            
+                                                <Image2 image = { currentMovies[index].image }/>                                            
                                             <hr className = { styles.cardLine } noshade = '' align = 'center'/>
                                             </div>
                                         </div>
