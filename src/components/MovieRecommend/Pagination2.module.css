@@ -1,0 +1,49 @@
+.pagination
+{
+    position: relative;
+    height: 50px;
+    bottom: 3px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.paginationNumber
+{
+    position: relative;
+    top: 14px;
+    left: 13px;
+    color: white;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.paginationButton
+{
+    position: relative;
+    width: 22px;
+    height: 22px;
+    margin-right: 0.5px;
+    border-radius: 5px 0px 0px 5px;
+    background-color: beige;
+    text-align: center;
+}
+
+.paginationButton2
+{
+    position: relative;
+    width: 22px;
+    height: 22px;
+    margin-left: 0.5px;
+    border-radius: 0px 5px 5px 0px;
+    background-color: beige;
+    text-align: center;
+}
+
+.icon
+{
+    position: relative;
+    color: #232023;
+    font-size: 10px;
+    padding-bottom: 1px;
+}
