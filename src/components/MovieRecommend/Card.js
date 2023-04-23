@@ -29,6 +29,7 @@ const Image2 = (props) =>
     }
 
     hoo()
+    console.log('hello')
 
     return (
         <Image width={400} height={200} className = { styles.cardImage } src = { 'https://images.dog.ceo/breeds/waterdog-spanish/20180723_185559.jpg' } alt = 'movie_poster' />                                            
