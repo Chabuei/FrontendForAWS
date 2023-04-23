@@ -288,6 +288,9 @@ const StateHandler = create((set, get) =>
         {   
             const currentState = get().currentState
 
+            //const test = await (await fetch('https://l4rzvuj9k8.execute-api.us-east-1.amazonaws.com/prod/test')).json()
+            //console.log(test)
+
             if(currentState == 'home')
             {
                 try

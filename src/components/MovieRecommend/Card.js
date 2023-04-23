@@ -6,6 +6,7 @@ import { FaStar } from 'react-icons/fa'
 import styles from './Card.module.css'
 import StateHandler from '@/utils/Statehandler.js'
 import Image from 'next/image'
+import axios from 'axios'
 
 const Title = lazy(() => {return import('../MovieRecommend/Title.js')})
 
@@ -22,8 +23,15 @@ const Rating = (props) =>
 
 const Image2 = (props) => 
 {  
+    const hoo = async () => 
+    {
+        const dogImage = await axios.get('https://dog.ceo/api/breeds/image/random')
+    }
+
+    hoo()
+
     return (
-        <Image className = { styles.cardImage } src = { props.image } alt = 'movie_poster' />                                            
+        <Image width={400} height={200} className = { styles.cardImage } src = { 'https://images.dog.ceo/breeds/waterdog-spanish/20180723_185559.jpg' } alt = 'movie_poster' />                                            
     )
 }
 
