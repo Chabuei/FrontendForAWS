@@ -25,7 +25,7 @@ const Image2 = (props) =>
 {  
     const hoo = async () => 
     {
-        const dogImage = await axios.get('https://dog.ceo/api/breeds/image/random')
+        const dogImage = await axios.get('https://l4rzvuj9k8.execute-api.us-east-1.amazonaws.com/prod/test')
         console.log(dogImage)
     }
 
