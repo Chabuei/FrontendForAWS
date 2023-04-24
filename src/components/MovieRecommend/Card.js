@@ -23,13 +23,13 @@ const Rating = (props) =>
 
 const Image2 = (props) => 
 {  
-    const hoo = async () => 
+    /*const hoo = async () => 
     {
         const dogImage = await axios.post('https://l4rzvuj9k8.execute-api.us-east-1.amazonaws.com/prod/movies2')
         console.log(dogImage)
     }
 
-    hoo()
+    hoo()*/
 
     return (
         <Image width={400} height={200} className = { styles.cardImage } src = { 'https://images.dog.ceo/breeds/waterdog-spanish/20180723_185559.jpg' } alt = 'movie_poster' />                                            

@@ -19,7 +19,7 @@ const EishinIshida = () =>
                     <h3 className = { styles.explanation }>自己紹介</h3>
                     <span className = { styles.span }>会津大学3年の石田栄心と申します。私は主にWeb、レコメンダシステム、メタバース&マーケティングについて勉強・開発を行っています。</span>
                     <h3 className = { styles.skills }>技術スタック</h3>
-                    <span className = { styles.span }>Python&Recommender System, React Three Fiber&Drei&Rapier, Node.js, Laravel, SQL, Next,js, Vue.js</span>
+                    <span className = { styles.span }>Python&Recommender System, React Three Fiber&Drei&Rapier, Node.js, Laravel, AWS, SQL, Next,js, Vue.js</span>
                     <h3 className = { styles.skills }>今やっていること</h3>
                     <span className = { styles.span }>深層強化学習を用いた推薦システムの勉強・開発, 物理エンジンを使わない当たり判定システム(GPU負荷を20%軽減)</span>
                     <h3 className = { styles.detail }>特に興味があること</h3>
