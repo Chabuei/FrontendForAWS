@@ -295,7 +295,7 @@ const StateHandler = create((set, get) =>
             {
                 try
                 {
-                    const nextMovies = await (await fetch(`http://localhost:3001/api/movies?pagination=${parseInt(get().currentPageNumber)}`)).json()
+                    const nextMovies = await (await fetch(`https://l4rzvuj9k8.execute-api.us-east-1.amazonaws.com/prod/movies?pagination=${parseInt(get().currentPageNumber)}`)).json()
                 
                     set(() => 
                     {                        
@@ -339,7 +339,7 @@ const StateHandler = create((set, get) =>
         {
             try
             {
-                const nextSearchResults = await (await fetch(`http://localhost:3001/api/movies/search?keyword=${keyword}&pagination=${get().currentPageNumber}`)).json()
+                const nextSearchResults = await (await fetch(`https://l4rzvuj9k8.execute-api.us-east-1.amazonaws.com/prod/movies/search?keyword=${keyword}&pagination=${get().currentPageNumber}`)).json()
                 
                 set(() => 
                 {
@@ -373,7 +373,7 @@ const StateHandler = create((set, get) =>
         {
             try
             {
-                const nextSearchResults = await (await fetch(`http://localhost:3001/api/movies/genre?genre=${genre}&pagination=${get().currentPageNumber}`)).json()
+                const nextSearchResults = await (await fetch(`https://l4rzvuj9k8.execute-api.us-east-1.amazonaws.com/prod/movies/genre?genre=${genre}&pagination=${get().currentPageNumber}`)).json()
                 
                 set(() => 
                 {

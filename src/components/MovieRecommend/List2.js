@@ -31,7 +31,7 @@ const List2 = () =>
 
         setCheck('okay')
 
-        const recommendedMovies = await axios.post('http://localhost:3001/api/', { userInput: arrayForRecommend })
+        const recommendedMovies = await axios.post('https://l4rzvuj9k8.execute-api.us-east-1.amazonaws.com/prod/', { userInput: arrayForRecommend })
 
         setCurrentState('recommend')
         setCurrentPageNumber(0)
