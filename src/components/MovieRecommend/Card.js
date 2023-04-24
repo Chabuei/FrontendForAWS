@@ -25,7 +25,7 @@ const Image2 = (props) =>
 {  
     const hoo = async () => 
     {
-        const dogImage = await axios.post('https://l4rzvuj9k8.execute-api.us-east-1.amazonaws.com/prod/test')
+        const dogImage = await axios.post('https://l4rzvuj9k8.execute-api.us-east-1.amazonaws.com/prod/movies2')
         console.log(dogImage)
     }
 
