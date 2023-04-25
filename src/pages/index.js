@@ -46,7 +46,7 @@ export async function getServerSideProps(context)
 
 const App = ({ movies }) => 
 {
-  
+  console.log(movies)
   const firstRender = useRef(false)
   const currentState3 = StateHandler((state) => { return state.currentState3 })
   const initMovies = StateHandler((state) => { return state.initMovies })
