@@ -67,7 +67,7 @@ const List2 = () =>
                         <div className = { styles.explanation }>
                             <div className = { styles.buttons }>
                                 <span className = { styles.howManyLikes }>{currentUserLikes.length}/10</span>                                
-                                <button className = { styles.deleteAll } onCLick = { () => { deleteAll() } }>
+                                <button className = { styles.deleteAll } onClick = { () => { deleteAll() } }>
                                     Delete All
                                 </button>                                                                
                                 <button className = { styles.recommendButton } onClick = { () => { submit() } }>
