@@ -22,7 +22,7 @@ export async function getServerSideProps(context)
 {
   try
   {
-    const movies = await (await fetch(`https://6s5f0hxwnj.execute-api.us-east-1.amazonaws.com/prod/movies?pagination=${0}`)).json()
+    const movies = await (await fetch(`https://xei7ax90q9.execute-api.us-east-1.amazonaws.com/prod/movies?pagination=${0}`)).json()
     
     return { props: { movies } }
   }
