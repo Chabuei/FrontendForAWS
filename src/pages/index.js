@@ -22,7 +22,7 @@ export async function getServerSideProps(context)
 {
   try
   {
-    const movies = await (await fetch(`https://l4rzvuj9k8.execute-api.us-east-1.amazonaws.com/prod/movies?pagination=${0}`)).json()
+    const movies = await (await fetch(`https://7kqfgbanwg.execute-api.us-east-1.amazonaws.com/prod/movies?pagination=${0}`)).json()
     
     return { props: { movies } }
   }
@@ -46,7 +46,6 @@ export async function getServerSideProps(context)
 
 const App = ({ movies }) => 
 {
-  console.log(movies)
   const firstRender = useRef(false)
   const currentState3 = StateHandler((state) => { return state.currentState3 })
   const initMovies = StateHandler((state) => { return state.initMovies })
