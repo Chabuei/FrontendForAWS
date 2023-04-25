@@ -18,10 +18,8 @@ const List2 = () =>
     const setRecommendedMovies = StateHandler((state) => { return state.setRecommendedMovies })
     const deleteAllUserLikes = StateHandler((state) => { return state.deleteAllUserLikes })
 
-    const submit = async (event) => 
+    const submit = async () => 
     {
-        event.preventDefault()
-        
         const arrayForRecommend = []
 
         currentUserLikes.map((currentUserLike) => 
@@ -40,13 +38,9 @@ const List2 = () =>
         setRecommendedMovies(recommendedMovies.data, 'fromList')
     }
 
-    const deleteAll = async (event) => 
-    {
-        event.preventDefault()
-
+    const deleteAll = () => 
+    {        
         deleteAllUserLikes()
-        
-        console.log('delete all')
     }
 
     useEffect(() => 
@@ -72,17 +66,13 @@ const List2 = () =>
                     <div className = { styles.container }>
                         <div className = { styles.explanation }>
                             <div className = { styles.buttons }>
-                                <span className = { styles.howManyLikes }>{currentUserLikes.length}/10</span>
-                                <form onSubmit = { (event) => { deleteAll(event) } }>
-                                    <button className = { styles.deleteAll }>
-                                        Delete All
-                                    </button>
-                                </form>
-                                <form onSubmit = { (event) => { submit(event) } }>
-                                    <button className = { styles.recommendButton }>
-                                        Recommend
-                                    </button>
-                                </form>
+                                <span className = { styles.howManyLikes }>{currentUserLikes.length}/10</span>                                
+                                <button className = { styles.deleteAll } onCLick = { () => { deleteAll() } }>
+                                    Delete All
+                                </button>                                                                
+                                <button className = { styles.recommendButton } onClick = { () => { submit() } }>
+                                    Recommend
+                                </button>                                
                             </div>
                         </div>
                         {
