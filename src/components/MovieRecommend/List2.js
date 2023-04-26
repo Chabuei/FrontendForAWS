@@ -31,8 +31,8 @@ const List2 = () =>
 
         //const recommendedMovies = await axios.post('https://6s5f0hxwnj.execute-api.us-east-1.amazonaws.com/prod/createrecommend', { userInput: arrayForRecommend }, { headers: { "Content-type": "text/plain" } })
         //const recommendedMovies = await axios.get(`https://xei7ax90q9.execute-api.us-east-1.amazonaws.com/prod/createrecommend?items=${arrayForRecommend}`)
-        const recommendedMovies = await (await fetch(`https://xei7ax90q9.execute-api.us-east-1.amazonaws.com/prod/createrecommend?items=${arrayForRecommend}`,  { mode: "no-cors" })).json()
-        console.log(recommendedMovies)
+        const recommendedMovies = await (await fetch(`https://xei7ax90q9.execute-api.us-east-1.amazonaws.com/prod/createrecommend?items=${arrayForRecommend}`)).json()
+        
         setCurrentState('recommend')
         setCurrentPageNumber(0)
         setRecommendedMovies(recommendedMovies.data, 'fromList')
