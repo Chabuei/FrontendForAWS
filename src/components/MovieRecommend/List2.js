@@ -33,7 +33,7 @@ const List2 = () =>
         
         setCurrentState('recommend')
         setCurrentPageNumber(0)
-        setRecommendedMovies(recommendedMovies.data, 'fromList')
+        setRecommendedMovies(recommendedMovies, 'fromList')
     }
 
     const deleteAll = () => 
