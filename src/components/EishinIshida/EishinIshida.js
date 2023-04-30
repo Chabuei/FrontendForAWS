@@ -17,13 +17,13 @@ const EishinIshida = () =>
             <div className = { styles.container }>
                 <div className = { styles.test1}>
                     <h3 className = { styles.explanation }>自己紹介</h3>
-                    <span className = { styles.span }>会津大学3年の石田栄心と申します。私は主にWeb、レコメンダシステム、メタバース&マーケティングについて勉強・開発を行っています。</span>
+                    <span className = { styles.span }>会津大学3年の石田栄心です。私は主にWeb、レコメンダシステム、メタバースについて勉強・開発を行っています。</span>
                     <h3 className = { styles.skills }>技術スタック</h3>
                     <span className = { styles.span }>Python&Recommender System, React Three Fiber&Drei&Rapier, Node.js, Laravel, AWS, SQL, Next,js, Vue.js</span>
                     <h3 className = { styles.skills }>今やっていること</h3>
                     <span className = { styles.span }>深層強化学習を用いた推薦システムの勉強・開発, 物理エンジンを使わない当たり判定システム(GPU負荷を20%軽減)</span>
                     <h3 className = { styles.detail }>特に興味があること</h3>
-                    <span className = { styles.span }>メタバースの在り方とその応用方法(マーケティング等), 深層強化学習を用いたレコメンダシステム, 仮想空間におけるスマートコントラクトの応用方法, ドメイン駆動開発, UX設計</span>
+                    <span className = { styles.span }>メタバースの在り方とその応用方法(マーケティング・広告等), 深層強化学習を用いたレコメンダシステム, 仮想空間におけるスマートコントラクトの応用方法, ドメイン駆動開発, UX設計</span>
                     <h3 className = { styles.url }>私のGithubはこちらから</h3>
                     <span className = { styles.span }><a href = 'https://github.com/Chabuei?tab=repositories' className = 'span'>https://github.com/Chabuei?tab=repositories</a></span>
                 </div>

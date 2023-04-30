@@ -108,7 +108,7 @@ const App = ({ movies }) =>
                         <h3 className = 'explanation'>概要</h3>
                         <span className = 'span'>Item2Vec(深層学習推薦システム)を用いた映画レコメンド(2023)</span>
                         <h3 className = 'skills'>技術スタック</h3>
-                        <span className = 'span'>Next.js, React Three Fiber, Zustand, Express.js, SQL, AWS(API Gateway, Lambda, Amplify, RDS等を用いたサーバレス開発&ホスティング), Python&Item2Vec(Word2vec)</span>
+                        <span className = 'span'>Next.js, React Three Fiber, Zustand, Express.js, SQL, AWS(API Gateway, Lambda, Amplify, RDS, EFS, EC2を用いたサーバレス開発&デプロイ), Python&Item2Vec(Word2vec)</span>
                         <h3 className = 'detail'>詳細</h3>
                         <span className = 'span'>　推薦システムを研究するためにItem2Vecを用いた映画レコメンドサイトを製作しました。ユーザは好きな映画を最大10件選びRecommendボタンを押すと、Express.jsで作成したAPIがItem2Vecをバックエンドで実行し、その結果が表示されます。Item2Vecはオフライン学習させたWord2Vecで実装しています。フロントはNext.js(SSR)とReact Three Fiberで作成しました。</span>                      
                     </div>
