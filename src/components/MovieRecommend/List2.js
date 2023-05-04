@@ -20,6 +20,7 @@ const List2 = () =>
 
     const submit = async () => 
     {
+        console.log('recommend start')
         const arrayForRecommend = []
 
         currentUserLikes.map((currentUserLike) => 
@@ -30,7 +31,7 @@ const List2 = () =>
         setCheck('okay')
 
         const recommendedMovies = await (await fetch(`https://xei7ax90q9.execute-api.us-east-1.amazonaws.com/prod/createrecommend?items=${arrayForRecommend}`)).json()
-        
+        console.log('recommend received')
         setCurrentState('recommend')
         setCurrentPageNumber(0)
         setRecommendedMovies(recommendedMovies, 'fromList')
