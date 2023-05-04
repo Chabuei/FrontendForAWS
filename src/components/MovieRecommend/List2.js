@@ -60,7 +60,7 @@ const List2 = () =>
 
     return (
         <>
-            <mesh position = { [-0.25, 0, 0] }>
+            <mesh position = { [0, 0, 0] }>
                 <Html transform>
                     <div className = { styles.container }>
                         <div className = { styles.explanation }>
