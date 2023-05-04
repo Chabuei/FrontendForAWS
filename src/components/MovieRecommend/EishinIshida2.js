@@ -16,7 +16,7 @@ export const EishinIshida2 = () =>
             <mesh position = { [ 5, -7.125, 0 ] }>
                 <Html transform>
                     <button className = { styles.EishinIshida } onClick = { () => { stateTransition() } }>
-                        Who is Eishin?
+                        About me
                     </button>                    
                 </Html>
             </mesh>
