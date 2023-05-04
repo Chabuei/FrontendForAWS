@@ -38,18 +38,15 @@ const Route = () =>
 
     return (
         <>
-            <mesh position = { [0, 0, 0] }>
+            <mesh position = { [-1.25, 0, 0] }>
                 <Html transform>
-                    <div className = { styles.container }>
+                    <div className = { styles.container }>                        
                         <button className = { currentState == 'home' ? 'specificHome' : 'normalHome' } onClick = { () => { Home() } }>
                             Home
-                        </button>
+                        </button>                        
                         <button className = { currentState == 'recommend' ? 'specificRecommend' : 'normalRecommend' } onClick = { () => { Recommend() } }>
-                            Recommended-List
-                        </button>
-                        <button className = { styles.EishinIshida } onClick = { () => { stateTransition() } }>
-                            EishinIshida
-                        </button>
+                            Recommended
+                        </button>                        
                     </div>
                 </Html>   
             </mesh>

@@ -13,6 +13,12 @@ const Pagination2 = () =>
     const incrementPageNumber = StateHandler((state) => { return state.incrementPageNumber })
     const decrementPageNumber = StateHandler((state) => { return state.decrementPageNumber })
     const setMovies = StateHandler((state) => { return state.setMovies })
+    const setState3 = StateHandler((state) => { return state.setState3 })
+
+    const stateTransition = () => 
+    {
+        setState3('trueNature')
+    }
 
     useEffect(() => 
     {
@@ -28,7 +34,7 @@ const Pagination2 = () =>
 
     return (
         <>
-            <mesh position = { [3, -7, 0] }>
+            <mesh position = { [4.25, -7, 0] }>
                 <Html transform>                    
                     <span className = { styles.paginationNumber }>
                         { Math.floor(((currentPageNumber / 10)) + 1)+'/'+ Math.ceil((allAdaptedMovies / 10)) }
@@ -40,7 +46,10 @@ const Pagination2 = () =>
                         <div className = { styles.paginationButton2 } onClick = { () => { incrementPageNumber() } } ref = { paginationButton }>
                             <FaArrowRight className = {styles.icon}/>
                         </div>
-                    </div>
+                        <button className = { styles.EishinIshida } onClick = { () => { stateTransition() } }>
+                            Who is Eishin?
+                        </button>
+                    </div>                    
                 </Html>
             </mesh>
         </>
