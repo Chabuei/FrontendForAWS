@@ -34,7 +34,7 @@ const Pagination2 = () =>
 
     return (
         <>
-            <mesh position = { [4.25, -7, 0] }>
+            <mesh position = { [3, -7, 0] }>
                 <Html transform>                    
                     <span className = { styles.paginationNumber }>
                         { Math.floor(((currentPageNumber / 10)) + 1)+'/'+ Math.ceil((allAdaptedMovies / 10)) }
@@ -46,9 +46,9 @@ const Pagination2 = () =>
                         <div className = { styles.paginationButton2 } onClick = { () => { incrementPageNumber() } } ref = { paginationButton }>
                             <FaArrowRight className = {styles.icon}/>
                         </div>
-                        <button className = { styles.EishinIshida } onClick = { () => { stateTransition() } }>
+                        {/*<button className = { styles.EishinIshida } onClick = { () => { stateTransition() } }>
                             Who is Eishin?
-                        </button>
+                        </button>*/}
                     </div>                    
                 </Html>
             </mesh>

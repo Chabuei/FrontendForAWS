@@ -17,6 +17,7 @@ import Loader from '@/components/TrueNature/Loader.js'
 import Controller from '@/components/TrueNature/Controller.js'
 import StateManager from '@/components/TrueNature/StateManager'
 import EishinIshida from '@/components/EishinIshida/EishinIshida.js'
+import { EishinIshida2 } from '@/components/MovieRecommend/EishinIshida2'
 
 export async function getServerSideProps(context)
 {
@@ -123,7 +124,8 @@ const App = ({ movies }) =>
                   <Information />
                   <World movies = { movies }/>
                   <Pagination2 />
-                  <List2 />                
+                  <List2 />
+                  <EishinIshida2 />                
               </mesh>
             </mesh>
           <mesh position = { [-5.575, 0.925, 0] }>
