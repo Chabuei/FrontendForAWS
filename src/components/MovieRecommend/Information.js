@@ -13,7 +13,7 @@ const Information = () =>
     {
         if(state == 'home')
         {
-            return `人気順で表示(最大10件の映画を選んでRecommendボタンを押しましょう※初回レコメンドのみ時間がかかります`
+            return `人気順で表示(最大10件の映画を選んでRecommendボタンを押しましょう)※初回レコメンドのみ10秒ほどかかります`
         }
 
         if(state == 'search')
