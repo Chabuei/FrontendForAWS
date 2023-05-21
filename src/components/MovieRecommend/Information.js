@@ -5,6 +5,7 @@ import StateHandler from '@/utils/Statehandler.js'
 const Information = () => 
 {
     const limit = 30
+    const recommendStatus = StateHandler((state) => { return state.recommendStatus })
     const currentState = StateHandler((state) => { return state.currentState })
     const searchKeyword = StateHandler((state) => { return state.searchKeyword })
     const currentMovies = StateHandler((state) => { return state.currentMovies })
@@ -13,11 +14,21 @@ const Information = () =>
     {
         if(state == 'home')
         {
+            if(recommendStatus == 'begin')
+            {
+                return 'あなたへのおすすめを作成しています...(Now loading)'
+            }
+
             return `人気順で表示(最大10件の映画を選んでRecommendボタンを押しましょう)※初回レコメンドのみ10秒ほどかかります`
         }
 
         if(state == 'search')
         {
+            if(recommendStatus == 'begin')
+            {
+                return 'あなたへのおすすめを作成しています...(Now loading)'
+            }
+
             if(searchKeyword.length >= limit)
             {
                 return `キーワード: ${searchKeyword.substr(0, limit)}…の検索結果`
@@ -30,6 +41,11 @@ const Information = () =>
 
         if(state == 'genre')
         {
+            if(recommendStatus == 'begin')
+            {
+                return 'あなたへのおすすめを作成しています...(Now loading)'
+            }
+
             if(searchKeyword.length >= limit)
             {
                 return `ジャンル: ${searchKeyword.substr(0, limit)}…の検索結果`
@@ -43,6 +59,11 @@ const Information = () =>
 
         if(state == 'recommend')
         {
+            if(recommendStatus == 'begin')
+            {
+                return 'あなたへのおすすめを作成しています...(Now loading)'
+            }
+
             if(currentMovies[0].movie_id !== '')
             {
                 return `あなたへのおすすめ`

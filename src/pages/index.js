@@ -21,6 +21,7 @@ import { EishinIshida2 } from '@/components/MovieRecommend/EishinIshida2'
 
 export async function getServerSideProps(context)
 {
+  //test
   try
   {
     const movies = await (await fetch(`https://xei7ax90q9.execute-api.us-east-1.amazonaws.com/prod/movies?pagination=${0}`)).json()

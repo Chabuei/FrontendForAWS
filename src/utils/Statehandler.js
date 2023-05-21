@@ -6,11 +6,20 @@ import RunState from '@/components/TrueNature/states/RunState.js'
 const StateHandler = create((set, get) => 
 {
     return {
+        recommendStatus: 'nothing',
+
+        setRecommendStatus: (inputState) => 
+        {
+            set(() => 
+            {
+                return { recommendStatus: inputState }
+            })
+        },
+
         currentState4: 'init',
 
         setState4: (inputState) => 
-        {
-            console.log(inputState)   
+        {            
             if(inputState !== get().currentState4)
             {             
                 

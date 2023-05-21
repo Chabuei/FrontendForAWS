@@ -12,15 +12,19 @@ const List2 = () =>
     const [currentUserLikes, setCurrentUserLikes] = useState([])
     const firstRender = useRef(false)
     const cardsContainerRef = useRef(null)
+    const recommendStatus = StateHandler((state) => { return state.recommendStatus })
     const userLikes = StateHandler((state) => { return state.userLikes })
     const setCurrentState = StateHandler((state) => { return state.setCurrentState })
     const setCurrentPageNumber = StateHandler((state) => { return state.setCurrentPageNumber })
     const setRecommendedMovies = StateHandler((state) => { return state.setRecommendedMovies })
+    const setRecommendStatus = StateHandler((state) => { return state.setRecommendStatus })
     const deleteAllUserLikes = StateHandler((state) => { return state.deleteAllUserLikes })
 
     const submit = async () => 
     {
-        console.log('recommend start')
+        //console.log('recommend start')
+        setRecommendStatus('begin')
+        recommendStatus
         const arrayForRecommend = []
 
         currentUserLikes.map((currentUserLike) => 
@@ -31,7 +35,8 @@ const List2 = () =>
         setCheck('okay')
 
         const recommendedMovies = await (await fetch(`https://xei7ax90q9.execute-api.us-east-1.amazonaws.com/prod/createrecommend?items=${arrayForRecommend}`)).json()
-        console.log('recommend received')
+        //console.log('recommend received')
+        setRecommendStatus('end')
         setCurrentState('recommend')
         setCurrentPageNumber(0)
         setRecommendedMovies(recommendedMovies, 'fromList')
