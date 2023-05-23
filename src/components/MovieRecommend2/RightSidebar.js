@@ -1,11 +1,17 @@
 import { useEffect, useState, useRef } from 'react'
 import { Html } from '@react-three/drei'
 import { FaSearch } from 'react-icons/fa'
-import styles from './GenreInput.module.css'
+import styles from './RightSidebar.module.css'
 import StateHandler from '@/utils/Statehandler'
 
-const GenreInput = () => 
+const RightSidebar = () => 
 {
+    const genres = 
+    [
+        'Action', 'Adventure', 'Animation', 'Children', 'Comedy', 'Crime', 'Documentary', 'Drama', 'Fantasy', 'Film-Noir',
+        'Horror', 'IMAX', 'Musical', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller', 'War', 'Western', 'other'
+    ]
+
     const firstRender = useRef(false)
     const [genre, setGenre] = useState('')
     const setSearchKeyword = StateHandler((state) => { return state.setSearchKeyword })
@@ -52,15 +58,30 @@ const GenreInput = () =>
     }, [currentPageNumber])
 
     return (
-        <Html transform>
-            <div className = { styles.container }>
-                <input className = { styles.genreInput } type = "text" placeholder = 'genre name' onChange={ (event) => { inputGenre(event) } }/>
-                <button className = { styles.genreButton } onClick = { () => { searchGenre(genre) } }>
-                    <FaSearch className = { styles.searchIcon }/>
-                </button>
+        <>
+            <div className = { styles.rightSidebar }>
+                <div className = { styles.heading }>
+                    <span>Genre Retrieve</span>
+                </div>
+                <div className = { styles.genres }>
+                    {
+                        genres.map((genre, index) => 
+                        {
+                            return (
+                                <span key = { index } className = { styles.genre }>{genre}</span>
+                            )
+                        })
+                    }
+                </div>
+                <div className = { styles.genreRetrieve }>
+                    <input className = { styles.genreInput } type = "text" placeholder = 'genre name' onChange = { (event) => { inputGenre(event) } }/>
+                    <button className = { styles.genreButton } onClick = { () => { searchGenre(genre) } }>
+                        <FaSearch className = { styles.headerIcon }/>
+                    </button>
+                </div>
             </div>
-        </Html>        
+        </>
     )
 }
 
-export default GenreInput
+export default RightSidebar

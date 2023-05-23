@@ -1,10 +1,11 @@
-import { Html } from '@react-three/drei'
+import { useRef } from 'react'
 import styles from './Information.module.css'
 import StateHandler from '@/utils/Statehandler.js'
 
 const Information = () => 
 {
     const limit = 30
+    const ref = useRef(null)
     const recommendStatus = StateHandler((state) => { return state.recommendStatus })
     const currentState = StateHandler((state) => { return state.currentState })
     const searchKeyword = StateHandler((state) => { return state.searchKeyword })
@@ -16,26 +17,26 @@ const Information = () =>
         {
             if(recommendStatus == 'begin')
             {
-                return 'あなたへのおすすめを作成しています...(Now loading)'
+                return 'Now creating recommendations for you...(It could take about 10 seconds for the first recommendations)'
             }
 
-            return `人気順で表示(最大10件の映画を選んでRecommendボタンを押しましょう)※初回レコメンドのみ10秒ほどかかります`
+            return `Home(Please input at most 10 favorite movies and then click Recommend button!)`
         }
 
         if(state == 'search')
         {
             if(recommendStatus == 'begin')
             {
-                return 'あなたへのおすすめを作成しています...(Now loading)'
+                return 'Now creating recommendations for you...(It could take about 10 seconds for the first recommendations)'
             }
 
             if(searchKeyword.length >= limit)
             {
-                return `キーワード: ${searchKeyword.substr(0, limit)}…の検索結果`
+                return `Results for the keyword '${searchKeyword.substr(0, limit)}'`
             }
             else
             {
-                return `キーワード: ${searchKeyword}の検索結果`
+                return `Results for the keyword '${searchKeyword}'`
             }
         }
 
@@ -43,16 +44,16 @@ const Information = () =>
         {
             if(recommendStatus == 'begin')
             {
-                return 'あなたへのおすすめを作成しています...(Now loading)'
+                return 'Now creating recommendations for you...(It could take about 10 seconds for the first recommendations)'
             }
 
             if(searchKeyword.length >= limit)
             {
-                return `ジャンル: ${searchKeyword.substr(0, limit)}…の検索結果`
+                return `Results for the genre '${searchKeyword.substr(0, limit)}'`
             }
             else
             {
-                return `ジャンル: ${searchKeyword}の検索結果`
+                return `Results for the genre '${searchKeyword}'`
             }
             
         }
@@ -61,32 +62,27 @@ const Information = () =>
         {
             if(recommendStatus == 'begin')
             {
-                return 'あなたへのおすすめを作成しています...(Now loading)'
+                return 'Now creating recommendations for you...(It could take about 10 seconds for the first recommendations)'
             }
 
             if(currentMovies[0].movie_id !== '')
             {
-                return `あなたへのおすすめ`
+                return 'Recommendations for you!'
             }
             else
             {
-                return `データ不足のためレコメンドできませんでした。他の映画を選んでみましょう。`
+                return 'We couldn`t make recommendations because of lack of data... Please try other movies'
             }
-            
         }
     }
     
     return (
         <>
-            <mesh position = { [2, 2.8, 0] }>
-                <Html transform>
-                    <div className = { styles.information }>
-                        <span className = { styles.display }>
-                            { displayInformation(currentState) }
-                        </span>
-                    </div>
-                </Html>
-            </mesh>
+            <div className = { styles.information }>
+                <span className = { styles.subInformation } ref = { ref }>
+                    { displayInformation(currentState) }
+                </span>
+            </div>                
         </>
     )
 }
